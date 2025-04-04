@@ -117,3 +117,11 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+// Customize the fonts being copied
+project.ext.vectoricons = [
+    iconFontNames: [ 'SimpleLineIcons.ttf' ] // Add only the fonts you need
+]
+
+// Apply the fonts.gradle script
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")

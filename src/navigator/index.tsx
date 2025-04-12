@@ -5,7 +5,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { HomeScreen } from '../screens';
+import { HomeScreen, ProfileScreen } from '../screens';
 import { SCREEN_KEY } from '../utils';
 import { CustomTabBar } from './partial';
 
@@ -20,29 +20,31 @@ const Tab = createBottomTabNavigator<ScreenParamList>();
 const getTabBar = (props: BottomTabBarProps) => <CustomTabBar {...props} />;
 
 const BottomTabs = () => (
-  <Tab.Navigator tabBar={props => getTabBar(props)}>
-    <Tab.Screen
-      name={SCREEN_KEY.Home}
-      component={HomeStack}
-      options={{ title: 'Ghi Thu Chi' }}
-    />
-    <Tab.Screen
-      name={SCREEN_KEY.Profile}
-      component={ProfileStack}
-      options={{ title: 'Profile' }}
-    />
+  <Tab.Navigator
+    tabBar={props => getTabBar(props)}
+    screenOptions={{ headerShown: false }}>
+    <Tab.Screen name={SCREEN_KEY.Home} component={HomeStack} />
+    <Tab.Screen name={SCREEN_KEY.Profile} component={ProfileStack} />
   </Tab.Navigator>
 );
 
 const HomeStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name={SCREEN_KEY.Home} component={HomeScreen} />
+  <Stack.Navigator>
+    <Stack.Screen
+      name={SCREEN_KEY.Home}
+      component={HomeScreen}
+      options={{ title: 'Ghi Thu Chi', headerTitleAlign: 'center' }}
+    />
   </Stack.Navigator>
 );
 
 const ProfileStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name={SCREEN_KEY.Profile} component={HomeScreen} />
+  <Stack.Navigator>
+    <Stack.Screen
+      name={SCREEN_KEY.Profile}
+      component={ProfileScreen}
+      options={{ title: 'Profile', headerTitleAlign: 'center' }}
+    />
   </Stack.Navigator>
 );
 

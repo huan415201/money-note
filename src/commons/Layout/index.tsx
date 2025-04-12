@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useInitData } from '../../hooks';
+import { useInitData } from 'src/hooks';
 import { styles } from './styles';
 
 const Layout = ({ children }: PropsWithChildren) => {

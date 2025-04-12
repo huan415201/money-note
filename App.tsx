@@ -5,10 +5,6 @@ import { Layout } from './src/commons';
 import Navigator from './src/navigator';
 import { persistor, store } from './src/redux';
 
-if (__DEV__) {
-  require('./reactotronConfig');
-}
-
 const App = () => {
   return (
     <Provider store={store}>

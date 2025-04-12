@@ -1,7 +1,7 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import { COLORS, SCREEN_KEY } from '../../../utils';
+import { COLORS, SCREEN_KEY } from 'src/utils';
 import { styles } from './styles';
 
 const getTabBarIcon = (route: string, isFocused: boolean) => {
